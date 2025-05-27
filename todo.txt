@@ -1,0 +1,11 @@
+here is a starting plan for my personal website
+
+CONCEPT:
+-- research what UI and design i want for my website
+-- decide on a color palette
+-- sketch conceptual pages
+-- (optional step) create p5 example
+
+LEARNING:
+-- go over class wiki on html, css, javascript and basics of web dev
+-- begin practice sketches
