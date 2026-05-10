@@ -65,7 +65,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- main row: bio + featured ---------- */
 .main-row {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2.5fr;
   border-bottom: var(--line);
 }
 
@@ -158,11 +158,12 @@ a { color: inherit; text-decoration: none; }
 
 .featured-image {
   display: block;
-  width: 100%;
-  height: 42vh;
-  min-height: 280px;
-  object-fit: cover;
-  background: #000;
+  max-width: 100%;
+  max-height: 42vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  background: transparent;
 }
 
 .featured-caption {
