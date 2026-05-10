@@ -1,0 +1,239 @@
+/* ---------- tokens ---------- */
+:root {
+  --bg: #D3CECB;
+  --ink: #371900;
+  --accent: #872F00;
+  --line: 1px solid var(--ink);
+  --frame-pad: 28px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1a0f05;        /* darker page behind the framed card */
+  color: var(--ink);
+  font-family: 'Bitter', Georgia, serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;            /* paragraphs at 150% of font size */
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- frame ---------- */
+.page {
+  background: var(--bg);
+  margin: 14px;
+  padding: 22px;
+  min-height: calc(100vh - 28px);
+  border: var(--line);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.inner {
+  border: var(--line);
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
+/* ---------- header ---------- */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: var(--line);
+}
+
+.masthead .brand {
+  font-family: 'Bitter', Georgia, serif;
+  font-weight: 300;
+  font-size: 44px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.masthead .nav {
+  justify-self: end;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+}
+
+/* ---------- main row: bio + featured ---------- */
+.main-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-bottom: var(--line);
+}
+
+.bio {
+  padding: 18px 22px;
+  border-right: var(--line);
+  color: var(--accent);
+}
+
+.bio .arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: 15px;
+  margin: 0 0 4px 0;
+  direction: rtl;
+  text-align: left;
+}
+
+.bio p {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cat-list a {
+  display: block;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 14px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  border-radius: 2px;
+  transition: background 0.15s ease;
+}
+
+.cat-list a:hover {
+  background: rgba(135, 47, 0, 0.08);
+}
+
+/* ---------- featured project ---------- */
+.featured {
+  padding: 18px 28px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featured-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.featured-head .title {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.tag-row {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+.tag {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 4px 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  border-radius: 2px;
+}
+
+.date {
+  color: var(--accent);
+  font-size: 13px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  background: #000;
+}
+
+.featured-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- secondary row: two cards ---------- */
+.secondary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: var(--line);
+}
+
+.card {
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card + .card { border-left: var(--line); }
+
+.card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: var(--line);
+  padding-bottom: 10px;
+}
+
+.card-head .title {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.card-head .date {
+  margin-left: 0;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  background: #000;
+}
+
+/* ---------- footer ---------- */
+.footer {
+  padding: 18px 28px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer .archive-link {
+  font-size: 22px;
+  letter-spacing: 0.12em;
+}
+
+/* ---------- empty scaffold pages ---------- */
+.scaffold-body {
+  padding: 60px 28px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
