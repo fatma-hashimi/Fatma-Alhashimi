@@ -22,7 +22,7 @@ const PROJECTS = {
     title: 'CRADLE TO FARM',
     date: 'Dec, 2025',
     tags: ['PRINTS', 'ILLUSTRATIONS'],
-    image: 'projects/Cradle_To_Farm/Assets/Images/ctf_topopen.jpg',
+    image: 'projects/Cradle_To_Farm/Assets/Images/ctf_COVER.png',
     alt: 'Cradle to Farm — packaged composition',
     description: "A risograph design series that expresses milk in three forms. Personal, my intolerance. Environment, the dairy production industry's impact on our earth. Composition, its chemical make up, such as proteins, fats, minerals.",
     page: 'projects/cradle-to-farm.html',
