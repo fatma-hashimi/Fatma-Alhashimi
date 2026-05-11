@@ -244,3 +244,43 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   letter-spacing: 0.12em;
 }
+
+/* ---------- mobile (≤768px) ---------- */
+@media (max-width: 768px) {
+  /* stack the two main grids into single columns */
+  .main-row { grid-template-columns: 1fr; }
+  .secondary-row { grid-template-columns: 1fr; }
+
+  /* flip dividers from vertical to horizontal */
+  .bio { border-right: none; border-bottom: var(--line); }
+  .card + .card { border-left: none; border-top: var(--line); }
+
+  /* featured collapses to look like the bottom cards: no caption,
+     matching paddings, matching title size */
+  .featured-caption { display: none; }
+  .featured { padding: 22px; gap: 12px; }
+  .card { padding: 22px; gap: 12px; }
+  .featured-head .title { font-size: 17px; letter-spacing: 0.05em; }
+
+  /* tighten masthead */
+  .masthead { padding: 14px 22px; }
+  .masthead .brand { font-size: 32px; }
+  .masthead .nav { font-size: 14px; letter-spacing: 0.15em; }
+
+  /* tighten bio + footer to match new padding language */
+  .bio { padding: 20px 22px; }
+  .footer { padding: 16px 22px; }
+  .footer .archive-link { font-size: 18px; }
+
+  /* outer page padding eats less of the narrow viewport */
+  .page { padding: 12px; }
+}
+
+/* ---------- very narrow (≤420px) ---------- */
+@media (max-width: 420px) {
+  .masthead .brand { font-size: 26px; }
+  .featured-head .title,
+  .card-head .title { font-size: 15px; }
+  .tag { font-size: 10px; padding: 3px 8px; }
+  .date { font-size: 12px; }
+}
