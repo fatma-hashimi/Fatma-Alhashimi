@@ -247,6 +247,58 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.12em;
 }
 
+/* ---------- project detail page ---------- */
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 28px;
+  border-bottom: var(--line);
+}
+
+.project-header .title {
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.project-header .tag-row { flex: 0 1 auto; }
+
+.project-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.project-images {
+  padding: 26px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.project-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+.project-side {
+  padding: 26px 30px;
+  border-left: var(--line);
+}
+
+.project-description {
+  position: sticky;
+  top: 24px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.project-description p { margin: 0 0 12px 0; }
+.project-description p:last-child { margin-bottom: 0; }
+
 /* ---------- mobile (≤768px) ---------- */
 @media (max-width: 768px) {
   /* stack the two main grids into single columns */
@@ -307,6 +359,21 @@ a { color: inherit; text-decoration: none; }
      featured slot is styled like a card here (the desktop-only 4:2
      short crop would feel cramped on a narrow stacked viewport) */
   .featured-image { aspect-ratio: 4 / 3; }
+
+  /* project detail page collapses to single column; description sits
+     above the image stack and stops being sticky (no value on a phone
+     that's already showing one column at a time) */
+  .project-header { padding: 14px 22px; flex-wrap: wrap; }
+  .project-header .title { font-size: 18px; }
+  .project-body { grid-template-columns: 1fr; }
+  .project-side {
+    order: -1;
+    border-left: none;
+    border-bottom: var(--line);
+    padding: 22px;
+  }
+  .project-images { padding: 22px; gap: 14px; }
+  .project-description { position: static; top: auto; }
 }
 
 /* ---------- very narrow (≤420px) ---------- */
