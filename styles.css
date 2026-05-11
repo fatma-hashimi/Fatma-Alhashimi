@@ -274,6 +274,19 @@ a { color: inherit; text-decoration: none; }
 
   /* outer page padding eats less of the narrow viewport */
   .page { padding: 12px; }
+
+  /* category buttons stop spanning the whole sidebar width — wrap as
+     content-sized pills instead so FABRICATION (and the others) don't
+     stretch into giant full-row banners */
+  .cat-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cat-btn { width: auto; }
+
+  /* if a card-head wraps, keep the tag row shrink-to-content so it
+     doesn't stretch its lone line edge-to-edge */
+  .tag-row { flex: 0 1 auto; }
 }
 
 /* ---------- very narrow (≤420px) ---------- */
