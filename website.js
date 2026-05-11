@@ -37,7 +37,7 @@ const PROJECTS = {
     page: 'projects/the-reptile.html',
   },
   'yellow-mud': {
-    title: 'YELLOW MUD',
+    title: 'YELLOW MUD CERAMICS FACTORY',
     date: 'May, 2023',
     tags: ['ARCHITECTURE'],
     image: 'projects/Yellow_Mud_Ceramics_Factory/Assets/Images/ymcf_COVER.png',
