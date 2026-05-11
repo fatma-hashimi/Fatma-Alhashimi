@@ -24,7 +24,7 @@ const PROJECTS = {
     tags: ['PRINTS', 'ILLUSTRATIONS'],
     image: 'projects/Cradle_To_Farm/Assets/Images/ctf_topopen.jpg',
     alt: 'Cradle to Farm — packaged composition',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "A risograph design series that expresses milk in three forms. Personal, my intolerance. Environment, the dairy production industry's impact on our earth. Composition, its chemical make up, such as proteins, fats, minerals.",
     page: 'projects/cradle-to-farm.html',
   },
   'the-reptile': {
@@ -61,7 +61,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS'],
     image: 'projects/Botanical_Illustration_Series/Assets/Images/bis_COVER.png',
     alt: 'Botanical Illustration Series — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "A series brought on to depict the taxonomy of plant species, specifically ones that were used in a natural dye system.",
     page: 'projects/botanical-series.html',
   },
   'social-battery-pack': {
