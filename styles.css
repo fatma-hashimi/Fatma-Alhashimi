@@ -287,6 +287,11 @@ a { color: inherit; text-decoration: none; }
   /* if a card-head wraps, keep the tag row shrink-to-content so it
      doesn't stretch its lone line edge-to-edge */
   .tag-row { flex: 0 1 auto; }
+
+  /* featured-head must also wrap so a long title + multiple tags
+     don't overflow the viewport (e.g. KEEP REFRIGERATED. with three
+     tags as the FABRICATION featured slot) */
+  .featured-head { flex-wrap: wrap; }
 }
 
 /* ---------- very narrow (≤420px) ---------- */
