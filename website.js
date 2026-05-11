@@ -53,6 +53,7 @@ const PROJECTS = {
     alt: 'Apiary — cover image',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/apiary.html',
+    objectPosition: 'center 85%',
   },
   'botanical-series': {
     title: 'BOTANICAL SERIES',
@@ -122,6 +123,7 @@ function renderFeatured(slug) {
   const img = document.getElementById('featured-image');
   img.src = p.image;
   img.alt = p.alt;
+  img.style.objectPosition = p.objectPosition || '';
   document.getElementById('featured-link').href = p.page;
   document.getElementById('featured-image-link').href = p.page;
 
@@ -144,6 +146,7 @@ function renderSecondary(slugs) {
     const card = document.createElement('article');
     card.className = 'card';
     const tagSpans = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    const posStyle = p.objectPosition ? ` style="object-position: ${p.objectPosition}"` : '';
     card.innerHTML = `
       <div class="card-head">
         <a href="${p.page}"><h2 class="title">${p.title}</h2></a>
@@ -151,7 +154,7 @@ function renderSecondary(slugs) {
         <span class="date">${p.date}</span>
       </div>
       <a href="${p.page}">
-        <img class="card-image" src="${p.image}" alt="${p.alt}" />
+        <img class="card-image" src="${p.image}" alt="${p.alt}"${posStyle} />
       </a>
     `;
     row.appendChild(card);
