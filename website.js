@@ -108,7 +108,7 @@ const CATEGORIES = {
   'default':              ['tidal-rites', 'keep-refrigerated', 'cradle-to-farm'],
   'fabrication':          ['keep-refrigerated', 'tidal-rites', 'social-battery-pack'],
   'physical-computation': ['tidal-rites', 'keep-refrigerated', 'social-battery-pack'],
-  'prints':               ['botanical-series', 'american-persimmon', 'cradle-to-farm'],
+  'prints':               ['american-persimmon', 'botanical-series', 'cradle-to-farm'],
   'illustrations':        ['apiary', 'black-dog', 'botanical-series'],
   'architecture':         ['yellow-mud', 'the-reptile', 'tactile-library'],
 };
