@@ -81,7 +81,7 @@ const PROJECTS = {
     alt: 'American Persimmon Package — cover image',
     description: "The American Persimmon Package is an art print to promote the distribution of seeds to ensure biodiversity.",
     page: 'projects/american-persimmon.html',
-    objectPosition: 'center 75%',
+    objectPosition: 'center 60%',
   },
   'tactile-library': {
     title: 'TACTILE LIBRARY OF REVIVAL',
