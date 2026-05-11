@@ -15,7 +15,7 @@ const PROJECTS = {
     tags: ['FABRICATION', 'P.COMP', 'PRINTS'],
     image: 'projects/Keep_Refrigerated/Assets/Images/kr_COVER1.jpg',
     alt: 'Keep Refrigerated — milk carton studies',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/keep-refrigerated.html',
   },
   'cradle-to-farm': {
@@ -24,7 +24,7 @@ const PROJECTS = {
     tags: ['PRINTS', 'ILLUSTRATIONS'],
     image: 'projects/Cradle_To_Farm/Assets/Images/ctf_topopen.jpg',
     alt: 'Cradle to Farm — packaged composition',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/cradle-to-farm.html',
   },
   'the-reptile': {
@@ -33,7 +33,7 @@ const PROJECTS = {
     tags: ['ARCHITECTURE'],
     image: 'projects/The_Reptile/Assets/Images/reptile_COVER.png',
     alt: 'The Reptile — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/the-reptile.html',
   },
   'yellow-mud': {
@@ -42,7 +42,7 @@ const PROJECTS = {
     tags: ['ARCHITECTURE'],
     image: 'projects/Yellow_Mud_Ceramics_Factory/Assets/Images/ymcf_COVER.png',
     alt: 'Yellow Mud Ceramics Factory — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/yellow-mud.html',
   },
   'apiary': {
@@ -51,7 +51,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS'],
     image: 'projects/Apiary/Assets/Images/apiary_COVER.png',
     alt: 'Apiary — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/apiary.html',
   },
   'botanical-series': {
@@ -60,7 +60,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS'],
     image: 'projects/Botanical_Illustration_Series/Assets/Images/bis_COVER.png',
     alt: 'Botanical Illustration Series — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/botanical-series.html',
   },
   'social-battery-pack': {
@@ -69,7 +69,7 @@ const PROJECTS = {
     tags: ['P.COMP'],
     image: 'projects/Social_Battery_Pack/Assets/Images/sbp_COVER.png',
     alt: 'Social Battery Pack — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/social-battery-pack.html',
   },
   'american-persimmon': {
@@ -78,7 +78,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS', 'PRINTS'],
     image: 'projects/American_Persimmon_Package/Assets/Images/app_COVER.png',
     alt: 'American Persimmon Package — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/american-persimmon.html',
   },
   'tactile-library': {
@@ -87,7 +87,7 @@ const PROJECTS = {
     tags: ['ARCHITECTURE'],
     image: 'projects/Tactile_Library_of_Revival/Assets/Images/tlor_COVER.png',
     alt: 'Tactile Library of Revival — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/tactile-library.html',
   },
   'black-dog': {
@@ -96,7 +96,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS'],
     image: 'projects/The_Black_Dog/Assets/Images/tbd_COVER1.png',
     alt: 'The Black Dog — cover image',
-    description: '',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     page: 'projects/black-dog.html',
   },
 };
@@ -143,9 +143,11 @@ function renderSecondary(slugs) {
     const p = PROJECTS[slug];
     const card = document.createElement('article');
     card.className = 'card';
+    const tagSpans = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
     card.innerHTML = `
       <div class="card-head">
         <a href="${p.page}"><h2 class="title">${p.title}</h2></a>
+        <div class="tag-row">${tagSpans}</div>
         <span class="date">${p.date}</span>
       </div>
       <a href="${p.page}">
