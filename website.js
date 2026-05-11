@@ -15,7 +15,7 @@ const PROJECTS = {
     tags: ['FABRICATION', 'P.COMP', 'PRINTS'],
     image: 'projects/Keep_Refrigerated/Assets/Images/kr_COVER1.jpg',
     alt: 'Keep Refrigerated — milk carton studies',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "A material study and design system that isolates our mundane and everyday milk into six frameworks. It marries the form of a milk carton to contexts that it lives under. It regards milk as personal, technological, environmental, nutritional, political, and historical. Each using different materials to draw out their narratives.",
     page: 'projects/keep-refrigerated.html',
   },
   'cradle-to-farm': {
@@ -33,7 +33,7 @@ const PROJECTS = {
     tags: ['ARCHITECTURE'],
     image: 'projects/The_Reptile/Assets/Images/reptile_COVER.png',
     alt: 'The Reptile — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "Using passive structure elements such as wind-catchers and adobe walls, The Reptile is both a research center and a residence. Limestone walls absorb heat during the day to insulate and release into the night to keep the space warm during chilly evenings. Wind-catchers harness wind to cool the building during hot daytimes. The space was made with the intention of learning about the local flora and fauna in the least invasive form possible. Collaborated with Chiara Wilkinson.",
     page: 'projects/the-reptile.html',
   },
   'yellow-mud': {
@@ -42,7 +42,7 @@ const PROJECTS = {
     tags: ['ARCHITECTURE'],
     image: 'projects/Yellow_Mud_Ceramics_Factory/Assets/Images/ymcf_COVER.png',
     alt: 'Yellow Mud Ceramics Factory — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "A ceramics workshop sitting atop rice paddy terraces within a peninsula along the Yangtze. It embodies elements of distributed and scattered facilities within the city of Yichang. Encompassing the traditions of making ceramics while also reclaiming the silt deposited at the bottom of the Yangtze to reform into clay. Collaborated with Durdona Rustomova.",
     page: 'projects/yellow-mud.html',
   },
   'apiary': {
@@ -51,7 +51,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS'],
     image: 'projects/Apiary/Assets/Images/apiary_COVER.png',
     alt: 'Apiary — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "Educational game that presents the biodiversity crisis America faces due to monoculture. It teaches the player how to tend to the bee's needs and promote local honey consumption.",
     page: 'projects/apiary.html',
     objectPosition: 'center 85%',
   },
@@ -70,7 +70,7 @@ const PROJECTS = {
     tags: ['P.COMP'],
     image: 'projects/Social_Battery_Pack/Assets/Images/sbp_COVER.png',
     alt: 'Social Battery Pack — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "Portable, clip-on pack with a built-in clock to visualize the wearer's social battery with an OLED display and peripherals to adjust the duration of the battery.",
     page: 'projects/social-battery-pack.html',
   },
   'american-persimmon': {
@@ -83,12 +83,12 @@ const PROJECTS = {
     page: 'projects/american-persimmon.html',
   },
   'tactile-library': {
-    title: 'TACTILE LIBRARY',
+    title: 'TACTILE LIBRARY OF REVIVAL',
     date: 'Dec, 2020',
     tags: ['ARCHITECTURE'],
     image: 'projects/Tactile_Library_of_Revival/Assets/Images/tlor_COVER.png',
     alt: 'Tactile Library of Revival — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "A library that uses textile and needlework as its foothold, sharing traditional knowledge on weaving, embroidering, sewing, and more skills that seem less and less prominent as handmade. Within the building, draped structures that behave as both sculptural and functional. Made of perforated metal sheets, they fold like natural textiles would, casting moments of light whilst holding up the three-floor library.",
     page: 'projects/tactile-library.html',
   },
   'black-dog': {
@@ -97,7 +97,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS'],
     image: 'projects/The_Black_Dog/Assets/Images/tbd_COVER1.png',
     alt: 'The Black Dog — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "Concept design and Twine game, a retelling of the English folktale - The Black Dog. The player chooses the Black Dog's actions, and through the process learns more about it. It either succumbs to madness as a harbinger of death, settles down and learns of humanity, or neutralizes into nothingness.",
     page: 'projects/black-dog.html',
   },
 };
