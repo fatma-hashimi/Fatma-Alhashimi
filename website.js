@@ -79,7 +79,7 @@ const PROJECTS = {
     tags: ['ILLUSTRATIONS', 'PRINTS'],
     image: 'projects/American_Persimmon_Package/Assets/Images/app_COVER.png',
     alt: 'American Persimmon Package — cover image',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: "The American Persimmon Package is an art print to promote the distribution of seeds to ensure biodiversity.",
     page: 'projects/american-persimmon.html',
   },
   'tactile-library': {
