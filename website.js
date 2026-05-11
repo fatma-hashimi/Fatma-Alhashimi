@@ -4,7 +4,7 @@ const PROJECTS = {
     title: 'TIDAL RITES',
     date: 'Jan, 2026',
     tags: ['FABRICATION', 'P.COMP'],
-    image: 'projects/Tidal_Rites/Assets/Images/tr_cover.jpg',
+    image: 'projects/Tidal_Rites/Assets/Images/tr_cover.png',
     alt: 'Tidal Rites — illuminated tidal vessel',
     description: "A location-specific artifact entwined with the tide station at The Battery's pier. Enclosed within is a small computer that queries NOAA's tidal API, translating the harbor's rise and fall into light. This vessel represents low tide as a dim blob at the bottom and high tide by swelling to its brim. It holds no water, but reflects the harbor's rhythm. Think of it as a living, landlocked echo, bound to the shore even through distance.",
     page: 'projects/tidal-rites.html',
@@ -31,7 +31,7 @@ const PROJECTS = {
     title: 'THE REPTILE',
     date: 'Dec, 2021',
     tags: ['ARCHITECTURE'],
-    image: 'projects/The_Reptile/Assets/Images/reptile_COVER.jpg',
+    image: 'projects/The_Reptile/Assets/Images/reptile_COVER.png',
     alt: 'The Reptile — cover image',
     description: '',
     page: 'projects/the-reptile.html',
@@ -40,7 +40,7 @@ const PROJECTS = {
     title: 'YELLOW MUD',
     date: 'May, 2023',
     tags: ['ARCHITECTURE'],
-    image: 'projects/Yellow_Mud_Ceramics_Factory/Assets/Images/ymcf_COVER.jpg',
+    image: 'projects/Yellow_Mud_Ceramics_Factory/Assets/Images/ymcf_COVER.png',
     alt: 'Yellow Mud Ceramics Factory — cover image',
     description: '',
     page: 'projects/yellow-mud.html',
@@ -49,7 +49,7 @@ const PROJECTS = {
     title: 'APIARY',
     date: 'Nov, 2021',
     tags: ['ILLUSTRATIONS'],
-    image: 'projects/Apiary/Assets/Images/apiary_COVER.jpg',
+    image: 'projects/Apiary/Assets/Images/apiary_COVER.png',
     alt: 'Apiary — cover image',
     description: '',
     page: 'projects/apiary.html',
@@ -58,7 +58,7 @@ const PROJECTS = {
     title: 'BOTANICAL SERIES',
     date: 'Feb, 2022',
     tags: ['ILLUSTRATIONS'],
-    image: 'projects/Botanical_Illustration_Series/Assets/Images/bis_COVER.jpg',
+    image: 'projects/Botanical_Illustration_Series/Assets/Images/bis_COVER.png',
     alt: 'Botanical Illustration Series — cover image',
     description: '',
     page: 'projects/botanical-series.html',
@@ -67,7 +67,7 @@ const PROJECTS = {
     title: 'SOCIAL BATTERY PACK',
     date: 'May, 2025',
     tags: ['P.COMP'],
-    image: 'projects/Social_Battery_Pack/Assets/Images/sbp_COVER.jpg',
+    image: 'projects/Social_Battery_Pack/Assets/Images/sbp_COVER.png',
     alt: 'Social Battery Pack — cover image',
     description: '',
     page: 'projects/social-battery-pack.html',
@@ -76,7 +76,7 @@ const PROJECTS = {
     title: 'AMERICAN PERSIMMON PACKAGE',
     date: 'Jul, 2020',
     tags: ['ILLUSTRATIONS', 'PRINTS'],
-    image: 'projects/American_Persimmon_Package/Assets/Images/app_COVER.jpg',
+    image: 'projects/American_Persimmon_Package/Assets/Images/app_COVER.png',
     alt: 'American Persimmon Package — cover image',
     description: '',
     page: 'projects/american-persimmon.html',
@@ -85,7 +85,7 @@ const PROJECTS = {
     title: 'TACTILE LIBRARY',
     date: 'Dec, 2020',
     tags: ['ARCHITECTURE'],
-    image: 'projects/Tactile_Library_of_Revival/Assets/Images/tlor_COVER.jpg',
+    image: 'projects/Tactile_Library_of_Revival/Assets/Images/tlor_COVER.png',
     alt: 'Tactile Library of Revival — cover image',
     description: '',
     page: 'projects/tactile-library.html',
@@ -94,20 +94,21 @@ const PROJECTS = {
     title: 'THE BLACK DOG',
     date: 'Apr, 2023',
     tags: ['ILLUSTRATIONS'],
-    image: 'projects/The_Black_Dog/Assets/Images/tbd_COVER1.jpg',
+    image: 'projects/The_Black_Dog/Assets/Images/tbd_COVER1.png',
     alt: 'The Black Dog — cover image',
     description: '',
     page: 'projects/black-dog.html',
   },
 };
 
-// Curated ordered list per category. Slot 0 = featured (top); rest = bottom row.
+// Curated ordered list per category — always 3 projects.
+// Slot 0 = featured (top); slots 1–2 = bottom row.
 const CATEGORIES = {
   'default':              ['tidal-rites', 'keep-refrigerated', 'cradle-to-farm'],
-  'fabrication':          ['tidal-rites', 'keep-refrigerated', 'social-battery-pack'],
+  'fabrication':          ['keep-refrigerated', 'tidal-rites', 'social-battery-pack'],
   'physical-computation': ['tidal-rites', 'keep-refrigerated', 'social-battery-pack'],
-  'prints':               ['botanical-series', 'cradle-to-farm', 'apiary', 'black-dog'],
-  'illustrations':        ['botanical-series', 'cradle-to-farm', 'american-persimmon', 'black-dog'],
+  'prints':               ['botanical-series', 'american-persimmon', 'cradle-to-farm'],
+  'illustrations':        ['apiary', 'black-dog', 'botanical-series'],
   'architecture':         ['yellow-mud', 'the-reptile', 'tactile-library'],
 };
 
@@ -137,7 +138,6 @@ function renderFeatured(slug) {
 function renderSecondary(slugs) {
   const row = document.getElementById('secondary-row');
   row.innerHTML = '';
-  row.classList.toggle('three-up', slugs.length === 3);
 
   for (const slug of slugs) {
     const p = PROJECTS[slug];

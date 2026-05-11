@@ -168,10 +168,9 @@ a { color: inherit; text-decoration: none; }
 .featured-image {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 520px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: #000;
+  background: transparent;
 }
 
 .featured-caption {
@@ -180,15 +179,11 @@ a { color: inherit; text-decoration: none; }
   margin: 16px 0 0 0;
 }
 
-/* ---------- secondary row: 2 or 3 cards ---------- */
+/* ---------- secondary row: two cards ---------- */
 .secondary-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom: var(--line);
-}
-
-.secondary-row.three-up {
-  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card {
@@ -223,10 +218,9 @@ a { color: inherit; text-decoration: none; }
 .card-image {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 360px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: #000;
+  background: transparent;
 }
 
 /* ---------- footer ---------- */
