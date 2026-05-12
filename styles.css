@@ -306,11 +306,11 @@ a { color: inherit; text-decoration: none; }
 /* ---------- archive page ---------- */
 .archive-row {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: max-content 1fr;
 }
 
 .archive-side {
-  padding: 26px 14px 26px 28px;
+  padding: 26px 18px 26px 28px;
   position: sticky;
   top: 0;
   align-self: start;
@@ -324,7 +324,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .archive-list {
-  padding: 12px 28px 32px 8px;
+  padding: 12px 28px 32px 24px;
   display: flex;
   flex-direction: column;
   border-left: var(--line);
