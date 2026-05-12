@@ -312,6 +312,11 @@ a { color: inherit; text-decoration: none; }
 .archive-side {
   padding: 26px 28px;
   border-right: var(--line);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  background: var(--bg);
+  z-index: 5;
 }
 
 .archive-cat-list .cat-btn {
@@ -320,7 +325,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .archive-list {
-  padding: 12px 32px 32px 32px;
+  padding: 12px 28px 32px 14px;
   display: flex;
   flex-direction: column;
 }
@@ -505,6 +510,7 @@ a { color: inherit; text-decoration: none; }
     border-right: none;
     border-bottom: var(--line);
     padding: 18px 22px;
+    position: static;
   }
   .archive-list { padding: 14px 22px 22px 22px; }
   .archive-item .archive-title { font-size: 16px; }
