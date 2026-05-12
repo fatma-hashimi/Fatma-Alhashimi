@@ -231,7 +231,29 @@ function applyArchiveFilter(catKey) {
   }
 }
 
+// Highlight the current page in the masthead nav (runs on every page)
+function markActiveNav() {
+  const path = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  for (const a of document.querySelectorAll('.masthead a.nav')) {
+    const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
+    if (href === path) a.classList.add('is-active');
+  }
+}
+
+// Wire up any .back-to-top buttons (smooth scroll to top)
+function wireBackToTop() {
+  for (const btn of document.querySelectorAll('.back-to-top')) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  markActiveNav();
+  wireBackToTop();
+
   // Homepage path
   if (document.getElementById('featured-image')) {
     applyCategory('default');
