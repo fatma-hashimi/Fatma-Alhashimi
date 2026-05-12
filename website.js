@@ -103,6 +103,16 @@ const PROJECTS = {
   },
 };
 
+// Maps a display tag label (uppercase, used inside .tags on a project)
+// to the lowercase category key used by the filter UI.
+const TAG_TO_CATEGORY = {
+  'FABRICATION':    'fabrication',
+  'P.COMP':         'physical-computation',
+  'ARCHITECTURE':   'architecture',
+  'ILLUSTRATIONS':  'illustrations',
+  'PRINTS':         'prints',
+};
+
 // Curated ordered list per category — always 3 projects.
 // Slot 0 = featured (top); slots 1–2 = bottom row.
 const CATEGORIES = {
@@ -178,23 +188,84 @@ function resetToDefault() {
   applyCategory('default');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  applyCategory('default');
+// --- Archive page ---
 
+// "Apr, 2026" → 202604 (sortable integer)
+function dateSortKey(str) {
+  const months = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12 };
+  const [mon, year] = str.replace(',', '').split(/\s+/);
+  return parseInt(year, 10) * 100 + (months[mon] || 0);
+}
+
+let activeArchiveCategory = null;
+
+function renderArchive() {
+  const list = document.getElementById('archive-list');
+  if (!list) return;
+
+  const slugs = Object.keys(PROJECTS).sort(
+    (a, b) => dateSortKey(PROJECTS[b].date) - dateSortKey(PROJECTS[a].date)
+  );
+
+  list.innerHTML = '';
+  for (const slug of slugs) {
+    const p = PROJECTS[slug];
+    const cats = p.tags.map(t => TAG_TO_CATEGORY[t]).filter(Boolean).join(' ');
+    const row = document.createElement('a');
+    row.className = 'archive-item';
+    row.href = p.page;
+    row.dataset.cats = cats;
+    row.innerHTML = `<span class="archive-title">${p.title}</span><span class="archive-date">${p.date}</span>`;
+    list.appendChild(row);
+  }
+}
+
+function applyArchiveFilter(catKey) {
+  activeArchiveCategory = catKey;
+  for (const item of document.querySelectorAll('.archive-item')) {
+    const cats = (item.dataset.cats || '').split(' ');
+    item.classList.toggle('dim', catKey !== null && !cats.includes(catKey));
+  }
   for (const btn of document.querySelectorAll('.cat-btn')) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const cat = btn.dataset.category;
-      if (cat === activeCategory) {
-        resetToDefault();
-      } else {
-        applyCategory(cat);
-      }
-    });
+    btn.classList.toggle('is-active', btn.dataset.category === catKey);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Homepage path
+  if (document.getElementById('featured-image')) {
+    applyCategory('default');
+
+    for (const btn of document.querySelectorAll('.cat-btn')) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = btn.dataset.category;
+        if (cat === activeCategory) {
+          resetToDefault();
+        } else {
+          applyCategory(cat);
+        }
+      });
+    }
+
+    const brand = document.getElementById('brand-reset');
+    if (brand) brand.addEventListener('click', (e) => { e.preventDefault(); resetToDefault(); });
+    return;
   }
 
-  document.getElementById('brand-reset').addEventListener('click', (e) => {
-    e.preventDefault();
-    resetToDefault();
-  });
+  // Archive page path
+  if (document.getElementById('archive-list')) {
+    renderArchive();
+    for (const btn of document.querySelectorAll('.cat-btn')) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = btn.dataset.category;
+        if (cat === activeArchiveCategory) {
+          applyArchiveFilter(null);
+        } else {
+          applyArchiveFilter(cat);
+        }
+      });
+    }
+  }
 });

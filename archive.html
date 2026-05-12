@@ -12,12 +12,28 @@
 <body>
   <main class="page">
     <div class="inner">
+
       <header class="masthead">
         <a class="brand" href="index.html">FATMA Y.</a>
         <a class="nav" href="about.html">ABOUT</a>
       </header>
-      <div class="scaffold-body">ARCHIVE</div>
+
+      <section class="archive-row">
+        <aside class="archive-side">
+          <ul class="cat-list archive-cat-list">
+            <li><button type="button" class="cat-btn" data-category="fabrication">FABRICATION</button></li>
+            <li><button type="button" class="cat-btn" data-category="physical-computation">PHYSICAL COMPUTATION</button></li>
+            <li><button type="button" class="cat-btn" data-category="architecture">ARCHITECTURE</button></li>
+            <li><button type="button" class="cat-btn" data-category="illustrations">ILLUSTRATIONS</button></li>
+            <li><button type="button" class="cat-btn" data-category="prints">PRINTS</button></li>
+          </ul>
+        </aside>
+
+        <div class="archive-list" id="archive-list"></div>
+      </section>
+
     </div>
   </main>
+  <script src="website.js?v=12"></script>
 </body>
 </html>
