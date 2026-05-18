@@ -501,6 +501,65 @@ a { color: inherit; text-decoration: none; }
 
 .not-found-link:hover { color: var(--ink); border-color: var(--ink); }
 
+/* ---------- document viewer page (resume / cv) ---------- */
+.document-page {
+  padding: 26px 40px 32px 40px;
+}
+
+.document-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: var(--line);
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.document-header .title {
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  margin: 0;
+  flex: 1;
+}
+
+.document-download {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  padding: 8px 14px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.document-download:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.document-embed {
+  width: 100%;
+  height: 78vh;
+  border: var(--line);
+  display: block;
+  background: var(--bg);
+}
+
+.document-fallback {
+  padding: 24px;
+  color: var(--accent);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .document-page { padding: 22px; }
+  .document-header .title { font-size: 18px; }
+  .document-embed { height: 70vh; }
+}
+
 /* ---------- preloader (full page + per-image) ---------- */
 .preloader-overlay {
   position: fixed;
