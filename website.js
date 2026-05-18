@@ -255,9 +255,51 @@ function wireBackToTop() {
   }
 }
 
+// Lightweight toast notification (single instance, reused).
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.className = 'toast';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  requestAnimationFrame(() => t.classList.add('is-visible'));
+  clearTimeout(t._hideTimer);
+  t._hideTimer = setTimeout(() => t.classList.remove('is-visible'), 1800);
+}
+
+// Click handler for [data-copy] elements: copies the attribute value
+// to clipboard and flashes a toast (text from data-toast or default).
+function wireCopyToClipboard() {
+  for (const el of document.querySelectorAll('[data-copy]')) {
+    el.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const text = el.dataset.copy;
+      const toastMsg = el.dataset.toast || 'Copied';
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        // Older-browser fallback
+        const tmp = document.createElement('textarea');
+        tmp.value = text;
+        tmp.style.position = 'fixed';
+        tmp.style.opacity = '0';
+        document.body.appendChild(tmp);
+        tmp.select();
+        try { document.execCommand('copy'); } catch {}
+        tmp.remove();
+      }
+      showToast(toastMsg);
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   markActiveNav();
   wireBackToTop();
+  wireCopyToClipboard();
 
   // Homepage path
   if (document.getElementById('featured-image')) {
