@@ -7,12 +7,30 @@
   --frame-pad: 28px;
 }
 
-/* Coffee / mocha dark theme — warm cream text on deep brown */
+/* Coffee / mocha dark theme — warm cream text on deep brown.
+   Uses a separate dimmed --line so borders recede behind text the
+   way they do in light mode (where dark ink lines sit visually
+   under dark text). Without this override, cream lines compete
+   with cream text and the page feels noisy. */
 [data-theme="dark"] {
-  --bg: #221610;
-  --ink: #E8DCC9;
-  --accent: #D4825A;
+  --bg: #1E140E;
+  --ink: #D9C7B0;
+  --accent: #C77F4F;
+  --line: 1px solid #463524;
 }
+
+/* Soften tag/button borders in dark mode — pure accent on a dark
+   bg pops harder than accent on beige did. Same color but lower
+   opacity keeps the line subordinate while text inside stays
+   readable. */
+[data-theme="dark"] .tag,
+[data-theme="dark"] .cat-btn:not(.is-active) {
+  border-color: rgba(199, 127, 79, 0.55);
+}
+
+/* Site footer caption — slightly dim in dark mode so the legal
+   line doesn't shout against the mocha bg */
+[data-theme="dark"] .site-footer { opacity: 0.7; }
 
 html, body { transition: background-color 0.25s ease, color 0.25s ease; }
 
