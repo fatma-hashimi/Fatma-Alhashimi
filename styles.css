@@ -42,6 +42,11 @@ html, body { transition: background-color 0.25s ease, color 0.25s ease; }
 /* Disable iOS auto-text-size-adjust when device rotates */
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
+/* Belt-and-suspenders horizontal-overflow prevention. Stops any rogue
+   wide child (e.g. a long content-sized button on a small viewport)
+   from pushing .inner beyond the screen edge. */
+html, body { overflow-x: hidden; }
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -882,6 +887,13 @@ body.is-scrolled .project-header .back-to-top {
   .cat-btn {
     display: inline-block;
     width: auto;
+    /* Tighter typography on phones so PHYSICAL COMPUTATION (the
+       longest button label) doesn't push the bio sidebar wider
+       than the screen and force the inner frame to overflow. */
+    font-size: 13px;
+    padding: 7px 12px;
+    letter-spacing: 0.12em;
+    max-width: 100%;
   }
 
   /* shrink-to-content so the tag row doesn't stretch */
