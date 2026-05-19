@@ -270,7 +270,14 @@ function wireProjectNav() {
   if (nextLink) {
     const next = PROJECTS[slugs[(idx + 1) % n]];
     nextLink.href = next.page;
-    nextLink.textContent = `NEXT: ${next.title} →`;
+    // Wrap the ": TITLE" portion in a span so mobile CSS can hide it,
+    // leaving just "NEXT →" on small screens.
+    nextLink.textContent = 'NEXT';
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'next-project-title';
+    titleSpan.textContent = `: ${next.title}`;
+    nextLink.appendChild(titleSpan);
+    nextLink.append(' →');
   }
   if (prevLink) {
     const prev = PROJECTS[slugs[(idx - 1 + n) % n]];

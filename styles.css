@@ -564,10 +564,15 @@ body.is-scrolled .project-header .back-to-top {
 
 /* Project prev/next footer — reuses .footer + .archive-link styling
    so it feels like the homepage's ARCHIVE → link. PREV sits on the
-   left, NEXT on the right with the project title preview. */
+   left, NEXT on the right with the project title preview on desktop;
+   the title preview hides on mobile so NEXT stays compact. */
 .project-next {
   border-top: var(--line);
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .next-project-title { display: none; }
 }
 
 /* ---------- 404 page ---------- */
