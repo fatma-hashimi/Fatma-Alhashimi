@@ -319,7 +319,7 @@ function wireThemeToggle() {
 
   const render = () => {
     const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    if (icon) icon.textContent = t === 'dark' ? '✷' : '☾';
+    if (icon) icon.textContent = t === 'dark' ? '✷' : '⏾';
     btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   };
 
