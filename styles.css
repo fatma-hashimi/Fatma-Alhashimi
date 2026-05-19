@@ -540,6 +540,27 @@ a { color: inherit; text-decoration: none; }
 
 .back-to-top:hover { color: var(--ink); }
 
+/* When the back-to-top sits inside the sticky project-header, center
+   it absolutely in the bar so it's flanked by title/tags on the left
+   and the date on the right. Hidden on mobile where the bar is dense. */
+.project-header .back-to-top {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .project-header .back-to-top { display: none; }
+}
+
+/* Next-project footer — reuses .footer + .archive-link styling so it
+   feels like the homepage's "ARCHIVE →" link, but sits inside each
+   project page above the site copyright. */
+.project-next {
+  border-top: var(--line);
+}
+
 /* ---------- 404 page ---------- */
 .not-found {
   padding: 80px 28px;

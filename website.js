@@ -245,6 +245,26 @@ function markActiveNav() {
   }
 }
 
+// On project detail pages, populate the "NEXT →" link in the
+// project-next footer with the next project in chronological order
+// (newest → oldest, wrapping around at the end), matching the order
+// shown on the archive page.
+function wireNextProject() {
+  const link = document.getElementById('next-project-link');
+  if (!link || typeof PROJECTS === 'undefined') return;
+  const segs = window.location.pathname.split('/').filter(Boolean);
+  const currentSlug = (segs[segs.length - 1] || '').toLowerCase();
+  if (!PROJECTS[currentSlug]) return;
+  const slugs = Object.keys(PROJECTS).sort(
+    (a, b) => dateSortKey(PROJECTS[b].date) - dateSortKey(PROJECTS[a].date)
+  );
+  const idx = slugs.indexOf(currentSlug);
+  if (idx === -1) return;
+  const next = PROJECTS[slugs[(idx + 1) % slugs.length]];
+  link.href = next.page;
+  link.textContent = `Next: ${next.title} →`;
+}
+
 // Wire up any .back-to-top buttons (smooth scroll to top)
 function wireBackToTop() {
   for (const btn of document.querySelectorAll('.back-to-top')) {
@@ -364,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireBackToTop();
   wireCopyToClipboard();
   wireThemeToggle();
+  wireNextProject();
   wireResumePager();
 
   // Homepage path
