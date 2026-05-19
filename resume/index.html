@@ -9,15 +9,15 @@
   <meta property="og:description" content="Artist resume of Fatma Y. Alhashimi — exhibitions, education, and selected projects." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://fhashimi.com/resume" />
-  <meta property="og:image" content="https://fhashimi.com/Misc/Documents/Artist_Resume_preview.png" />
+  <meta property="og:image" content="https://fhashimi.com/Misc/Documents/Artist_Resume_preview_1.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Artist Resume — Fatma Y. Alhashimi" />
   <meta name="twitter:description" content="Artist resume of Fatma Y. Alhashimi — exhibitions, education, and selected projects." />
-  <meta name="twitter:image" content="https://fhashimi.com/Misc/Documents/Artist_Resume_preview.png" />
+  <meta name="twitter:image" content="https://fhashimi.com/Misc/Documents/Artist_Resume_preview_1.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;700;900&family=Lalezar&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=13" />
+  <link rel="stylesheet" href="/styles.css?v=14" />
 </head>
 <body>
   <main class="page">
@@ -40,12 +40,21 @@
             <span>Download PDF</span>
             <span class="resume-download-arrow">&darr;</span>
           </a>
-          <p class="resume-meta">PDF · ~82 KB</p>
+          <p class="resume-meta">PDF · 2 pages · ~82 KB</p>
         </div>
 
-        <a class="resume-preview" href="/Misc/Documents/Artist_Resume.pdf" download aria-label="Open Artist Resume PDF">
-          <img src="/Misc/Documents/Artist_Resume_preview.png" alt="First page preview of the Artist Resume PDF" loading="lazy" />
-        </a>
+        <div class="resume-preview-wrap"
+             data-pages="2"
+             data-src-prefix="/Misc/Documents/Artist_Resume_preview_">
+          <a class="resume-preview" href="/Misc/Documents/Artist_Resume.pdf" download aria-label="Open Artist Resume PDF">
+            <img id="resume-page-img" src="/Misc/Documents/Artist_Resume_preview_1.png" alt="Page 1 of the Artist Resume PDF" loading="lazy" />
+          </a>
+          <div class="resume-pager" role="group" aria-label="Resume page navigation">
+            <button type="button" class="resume-pager-btn" data-dir="-1" aria-label="Previous page">&larr;</button>
+            <span class="resume-pager-status" aria-live="polite">1 / 2</span>
+            <button type="button" class="resume-pager-btn" data-dir="1" aria-label="Next page">&rarr;</button>
+          </div>
+        </div>
       </section>
 
       <footer class="site-footer">© 2026 FATMA YOUSUF ALHASHIMI. ALL RIGHTS RESERVED.</footer>
@@ -54,6 +63,6 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.10.0/lib/p5.min.js" defer></script>
   <script src="/preloader.js?v=2" defer></script>
-  <script src="/website.js?v=19"></script>
+  <script src="/website.js?v=20"></script>
 </body>
 </html>

@@ -622,6 +622,12 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
+.resume-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
 .resume-preview {
   display: block;
   text-decoration: none;
@@ -634,13 +640,56 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   box-shadow: 0 12px 36px rgba(55, 25, 0, 0.18),
               0 2px 6px rgba(55, 25, 0, 0.10);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, opacity 0.2s ease;
 }
 
 .resume-preview:hover img {
   box-shadow: 0 18px 48px rgba(55, 25, 0, 0.26),
               0 4px 10px rgba(55, 25, 0, 0.14);
   transform: translateY(-3px);
+}
+
+.resume-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.resume-pager-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+  padding: 0;
+}
+
+.resume-pager-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.resume-pager-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.resume-pager-status {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  min-width: 64px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

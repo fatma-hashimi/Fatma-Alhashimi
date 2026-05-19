@@ -270,6 +270,45 @@ function showToast(msg) {
   t._hideTimer = setTimeout(() => t.classList.remove('is-visible'), 1800);
 }
 
+// Resume PDF pager — page-by-page navigation on /resume.
+function wireResumePager() {
+  const wrap = document.querySelector('.resume-preview-wrap');
+  if (!wrap) return;
+  const pages = parseInt(wrap.dataset.pages, 10) || 1;
+  const prefix = wrap.dataset.srcPrefix || '';
+  const img = wrap.querySelector('#resume-page-img');
+  const status = wrap.querySelector('.resume-pager-status');
+  const buttons = wrap.querySelectorAll('.resume-pager-btn');
+  let current = 1;
+
+  function update(page) {
+    current = Math.max(1, Math.min(pages, page));
+    img.src = `${prefix}${current}.png`;
+    img.alt = `Page ${current} of the Artist Resume PDF`;
+    if (status) status.textContent = `${current} / ${pages}`;
+    for (const btn of buttons) {
+      const dir = parseInt(btn.dataset.dir, 10);
+      btn.disabled = (dir === -1 && current === 1) || (dir === 1 && current === pages);
+    }
+  }
+
+  for (const btn of buttons) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      update(current + parseInt(btn.dataset.dir, 10));
+    });
+  }
+
+  // Arrow-key navigation while focused on the resume page
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowLeft') update(current - 1);
+    else if (e.key === 'ArrowRight') update(current + 1);
+  });
+
+  update(1);
+}
+
 // Click handler for [data-copy] elements: copies the attribute value
 // to clipboard and flashes a toast (text from data-toast or default).
 function wireCopyToClipboard() {
@@ -300,6 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
   markActiveNav();
   wireBackToTop();
   wireCopyToClipboard();
+  wireResumePager();
 
   // Homepage path
   if (document.getElementById('featured-image')) {
