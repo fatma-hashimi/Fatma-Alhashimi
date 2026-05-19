@@ -245,24 +245,55 @@ function markActiveNav() {
   }
 }
 
-// On project detail pages, populate the "NEXT →" link in the
-// project-next footer with the next project in chronological order
-// (newest → oldest, wrapping around at the end), matching the order
-// shown on the archive page.
-function wireNextProject() {
-  const link = document.getElementById('next-project-link');
-  if (!link || typeof PROJECTS === 'undefined') return;
+// On project detail pages, populate the PREV / NEXT links in the
+// project-next footer based on chronological order (newest → oldest,
+// matching the archive). NEXT shows the project title preview;
+// PREV stays a plain "← PREV" with no title. Both wrap around at
+// the ends so navigation loops.
+function wireProjectNav() {
+  const prevLink = document.getElementById('prev-project-link');
+  const nextLink = document.getElementById('next-project-link');
+  if (!nextLink && !prevLink) return;
+  if (typeof PROJECTS === 'undefined') return;
+
   const segs = window.location.pathname.split('/').filter(Boolean);
   const currentSlug = (segs[segs.length - 1] || '').toLowerCase();
   if (!PROJECTS[currentSlug]) return;
+
   const slugs = Object.keys(PROJECTS).sort(
     (a, b) => dateSortKey(PROJECTS[b].date) - dateSortKey(PROJECTS[a].date)
   );
   const idx = slugs.indexOf(currentSlug);
   if (idx === -1) return;
-  const next = PROJECTS[slugs[(idx + 1) % slugs.length]];
-  link.href = next.page;
-  link.textContent = `Next: ${next.title} →`;
+
+  const n = slugs.length;
+  if (nextLink) {
+    const next = PROJECTS[slugs[(idx + 1) % n]];
+    nextLink.href = next.page;
+    nextLink.textContent = `NEXT: ${next.title} →`;
+  }
+  if (prevLink) {
+    const prev = PROJECTS[slugs[(idx - 1 + n) % n]];
+    prevLink.href = prev.page;
+    prevLink.textContent = '← PREV';
+  }
+}
+
+// Track scroll position so the in-header back-to-top can hide
+// until the user has actually moved down the page.
+function wireScrollState() {
+  let ticking = false;
+  const update = () => {
+    document.body.classList.toggle('is-scrolled', window.scrollY > 120);
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
 }
 
 // Wire up any .back-to-top buttons (smooth scroll to top)
@@ -384,7 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
   wireBackToTop();
   wireCopyToClipboard();
   wireThemeToggle();
-  wireNextProject();
+  wireProjectNav();
+  wireScrollState();
   wireResumePager();
 
   // Homepage path

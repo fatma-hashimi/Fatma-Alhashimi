@@ -541,24 +541,33 @@ a { color: inherit; text-decoration: none; }
 .back-to-top:hover { color: var(--ink); }
 
 /* When the back-to-top sits inside the sticky project-header, center
-   it absolutely in the bar so it's flanked by title/tags on the left
-   and the date on the right. Hidden on mobile where the bar is dense. */
+   it absolutely in the bar. Hidden by default (opacity 0) and shown
+   only after the user has scrolled past the masthead — when there's
+   actually somewhere to scroll back to. Hidden entirely on mobile. */
 .project-header .back-to-top {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+body.is-scrolled .project-header .back-to-top {
+  opacity: 1;
+  pointer-events: auto;
 }
 @media (max-width: 768px) {
   .project-header .back-to-top { display: none; }
 }
 
-/* Next-project footer — reuses .footer + .archive-link styling so it
-   feels like the homepage's "ARCHIVE →" link, but sits inside each
-   project page above the site copyright. */
+/* Project prev/next footer — reuses .footer + .archive-link styling
+   so it feels like the homepage's ARCHIVE → link. PREV sits on the
+   left, NEXT on the right with the project title preview. */
 .project-next {
   border-top: var(--line);
+  justify-content: space-between;
 }
 
 /* ---------- 404 page ---------- */
