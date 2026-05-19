@@ -47,6 +47,25 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
    from pushing .inner beyond the screen edge. */
 html, body { overflow-x: hidden; }
 
+/* Hard-cap page + inner so neither can ever exceed viewport width.
+   And reset min-width: auto (the default for flex/grid items) to 0
+   on the row/cell wrappers so a wide child can't force them past
+   their parent's content box. Without this, a single overflowing
+   child silently pushes everything wider than viewport and the
+   inner frame's right border ends up clipped off-screen, which
+   reads as "left margin wider than right". */
+.page, .inner {
+  width: 100%;
+  max-width: 100%;
+}
+.inner,
+.main-row, .secondary-row, .archive-row, .project-body, .about-row, .resume-page,
+.bio, .featured, .card,
+.archive-side, .archive-list,
+.project-images, .project-side {
+  min-width: 0;
+}
+
 * { box-sizing: border-box; }
 
 html, body {
