@@ -1,0 +1,12 @@
+{
+  "name": "Fatma Y. Alhashimi",
+  "short_name": "FATMA Y.",
+  "description": "Fatma Y. Alhashimi — Emirati multidisciplinary artist, conceptualizing through words, illustrations, fabrications, and design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#D3CECB",
+  "theme_color": "#D3CECB",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
