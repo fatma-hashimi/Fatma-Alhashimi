@@ -309,6 +309,30 @@ function wireResumePager() {
   update(1);
 }
 
+// Theme toggle: flips data-theme on <html>, persists choice in
+// localStorage, updates the icon (☾ for "switch to dark", ✷ for
+// "switch back to light").
+function wireThemeToggle() {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  const icon = btn.querySelector('.theme-toggle-icon');
+
+  const render = () => {
+    const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    if (icon) icon.textContent = t === 'dark' ? '✷' : '☾';
+    btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch {}
+    render();
+  });
+
+  render();
+}
+
 // Click handler for [data-copy] elements: copies the attribute value
 // to clipboard and flashes a toast (text from data-toast or default).
 function wireCopyToClipboard() {
@@ -339,6 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
   markActiveNav();
   wireBackToTop();
   wireCopyToClipboard();
+  wireThemeToggle();
   wireResumePager();
 
   // Homepage path
